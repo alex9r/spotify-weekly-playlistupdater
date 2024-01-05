@@ -7,7 +7,7 @@ from flask import Flask, request, url_for, session, redirect
 app = Flask(__name__)
 
 app.config['SESSION_COOKIE_NAME'] = 'Spotify Cookie'
-app.secret_key = 'sdwfsksifowawocna%@cnas@4#'
+app.secret_key = 'random_key'
 TOKEN_INFO = 'token_info'
 
 @app.route('/')
@@ -75,8 +75,8 @@ def get_token():
 
 def create_spotify_oauth():
     return SpotifyOAuth(
-        client_id = "b23a27ad7f8c405ea1031b99df0ab212",
-        client_secret = "c1fe9ca5bea94415b4ff9ab719603c4e",
+        client_id = "your_client_id",
+        client_secret = "your_secret_key",
         redirect_uri = url_for('redirect_page', _external = True),
         scope = 'user-library-read playlist-modify-public playlist-modify-private'
         )
